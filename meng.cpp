@@ -6,23 +6,23 @@ R3::R3()
 	for(int i = 0; i < 3; i++)
 		_conts[i] = 0;
 }
-R3::R3(const long double a[3])
+R3::R3(const real a[3])
 {
 	for(int i = 0; i < 3; i++)
 		_conts[i] = a[i];
 }
-long double R3::len()
+real R3::len()
 {
-	long double ret;
+	real ret;
 	int i = 0;
 	for(i = 0; i < 3; i++)
 		ret += _conts[i] * _conts[i];
 	return sqrtl(ret);
 }
-long double R3::sqlen()
+real R3::sqlen()
 {
 	int i = 0;
-	long double ret = 0;
+	real ret = 0;
 	for (i = 0; i < 3; i++){
 		ret += _conts[i] * _conts[i];
 	}
@@ -39,7 +39,7 @@ R3 R3::operator = (R3 a)
 		_conts[i] = a[i];
 	return *this;
 }	
-long double& R3::operator [] (int i)
+real& R3::operator [] (int i)
 {
 	if (i < 0 || i >= 3)
 		return fallback;
@@ -62,9 +62,9 @@ R3 R3::operator - (R3 a)
 		r[i] = a[i] - _conts[i];
 	return r;
 }
-long double R3::operator * (R3 d)
+real R3::operator * (R3 d)
 {
-	long double r = 0;
+	real r = 0;
 	int i = 0;
 	for(i = 0; i < 3; i++)
 		r += d[i] * _conts[i];
@@ -78,7 +78,7 @@ R3 R3::operator ^ (R3 d)
 	ret[2] = _conts[0] * d[1] - _conts[1] * d[0];
 	return ret;
 }
-R3 R3::operator * (long double a)
+R3 R3::operator * (real a)
 {
 	R3 r;
 	int i = 0;
@@ -86,7 +86,7 @@ R3 R3::operator * (long double a)
 		r[i] = a * _conts[i];
 	return r;
 }
-R3 R3::operator / (long double a)
+R3 R3::operator / (real a)
 {
 	R3 r;
 	int i = 0;
@@ -108,14 +108,14 @@ R3 R3::operator -= (R3 a)
 		_conts[i] -= a[i];
 	return *this;
 }
-R3 R3::operator *= (long double a)
+R3 R3::operator *= (real a)
 {
 	int i = 0;
 	for(i = 0; i < 3; i++)
 		_conts[i] *= a;
 	return *this;	
 }
-R3 R3::operator /= (long double a)
+R3 R3::operator /= (real a)
 {
 	int i = 0;
 	for(i = 0; i < 3; i++)
@@ -123,6 +123,6 @@ R3 R3::operator /= (long double a)
 	return *this;		
 }
 
-R3 operator * (long double a, R3 v){
+R3 operator * (real a, R3 v){
 	return v * a;
 }
