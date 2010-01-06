@@ -32,13 +32,13 @@ R3 R3::towards (R3 a)
 {
 	return (a - (*this)) / (a - (*this)).len();
 }
-R3 R3::operator = (R3 a)
+/*R3 R3::operator = (R3 a)
 {
 	int i = 0;
 	for(i = 0; i < 3; i++)
 		_conts[i] = a[i];
 	return *this;
-}	
+}*/	
 real& R3::operator [] (int i)
 {
 	if (i < 0 || i >= 3)
