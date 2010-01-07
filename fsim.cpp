@@ -68,7 +68,7 @@ int main(int argc, char *argv[]){
 		force[2] = keystate[SDLK_k] - keystate[SDLK_m] - .5;
 		cosa.velocity += force * dt;
 		cosa.position += cosa.velocity * dt;
-		if (cosa.position[2] <= 0){
+		if (cosa.position[2] < 0){
 			cosa.position[2] *= -1;
 			cosa.velocity[2] *= -1;
 		}
