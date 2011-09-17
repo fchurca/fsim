@@ -96,7 +96,7 @@ R33 operator / (R3 a, R3 b){
 	return ret;
 }
 R3 operator * (R3 v, real a){
-	for(int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		v[i] *= a;
 	return v;
 }
@@ -105,7 +105,7 @@ R3 operator * (real a, R3 v){
 }
 R3 operator / (R3 v, real a){
 	R3 r;
-	for(int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		r[i] =v[i] / a;
 	return r;
 }
@@ -126,7 +126,7 @@ R3 operator /= (R3 & v, real a){
 // Matrix operations
 R33 identityR33(){
 	R33 ret;
-	for  (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		ret[i][i] = 1;
 	return ret;
 }
@@ -164,7 +164,7 @@ R3 operator * (R3 v, R33 m){
 	return ret;
 }
 R33 operator * (R33 m, real a){
-	for(int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		m[i] *= a;
 	return m;
 }
@@ -172,7 +172,7 @@ R33 operator * (real a, R33 m){
 	return m * a;
 }
 R33 operator / (R33 m, real a){
-	for(int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		m[i] /= a;
 	return m;
 }
